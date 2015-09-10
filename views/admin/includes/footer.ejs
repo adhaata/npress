@@ -1,0 +1,17 @@
+<footer class="footer">
+<p>&copy; Company 2014 <a href="/admin">admin</a></p>
+</footer>
+
+</div> <!-- /container -->
+<!-- JavaScript -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<% if (typeof data != "undefined" && data.hasOwnProperty("js_full_foot")) { %>
+<% for (var i = 0; i < data.js_full_foot.length; i++) {  %>
+<script type="text/javascript" src="<%-  data.js_full_foot[i] %>"></script><% }  %><% } %>
+<% if (typeof data != "undefined" && data.hasOwnProperty("js_foot")) { %><% for (var i = 0; i < data.js_foot.length; i++) {  %>
+<script type="text/javascript" src="/js/<%-  data.js_foot[i] %>.js"></script><% }  %>
+<% } %>
+<script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<a href="/admin/post">all posts</a>
+
+
+<form method="post" action="/admin/post">
+    
+<input type="input" name="post_id" value="<%- post._id -%>">
+    
+    
+<br>
+<input type="input" name="title" value="<%- post.title -%>" class="form-control"  placeholder="Enter title here">
+<br><br>
+<textarea name="description" class="form-control" rows="3"><%- post.description -%></textarea>
+<br>Category<br>
+<select name="category" class="form-control">
+<option>Uncategorised</option>
+</select>
+
+
+<br>Status<br>
+<select name="status" class="form-control">
+<option>Draft</option>
+<option>Pending review</option>
+</select>
+
+
+
+<br>Visibility<br>
+<select name="visibility" class="form-control">
+<option>Public</option>
+<option>Private</option>
+</select>
+
+<br><br>
+<button type="submit" class="btn btn-primary">Update</button>
+
+</form>

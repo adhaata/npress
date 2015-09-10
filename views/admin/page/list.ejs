@@ -1,0 +1,30 @@
+<% include ../includes/header %>
+
+
+<div class="row">
+    <div class="col-md-4">
+      <% include ../includes/side %>
+    </div>
+  <div class="col-md-8">
+     
+     
+     
+     
+ <a href="/admin/page/add" class="btn btn-success">Add new</a>
+<hr>     
+     
+<% posts.forEach(function(post, index) { %>
+<p>
+<%- post.title -%> | <a href="/admin/post?action=edit&id=<%- post._id -%>">edit</a> | <a href="/admin/post?action=delete&id=<%- post._id -%>">delete</a>
+</p>
+
+<% })  %>
+     
+     
+     
+     
+     
+  </div>
+</div>
+
+<% include ../includes/footer %>
