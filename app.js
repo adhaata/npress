@@ -5,6 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var app = express();
+
+
+app.locals.dsadda = 'My App';
 
 
 // Database
@@ -13,12 +17,16 @@ mongoose.connect('mongodb://localhost/nodeworlddev');
 
 
 var routes = require('./routes/index');
-var admin = require('./routes/admin/index');
+//admin
+var admin = require('./routes/admin/admin');
+var adminPost = require('./routes/admin/post');
+var adminPage = require('./routes/admin/page');
+var adminMenu = require('./routes/admin/menu');
+var adminUser = require('./routes/admin/user');
 
 
 
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,6 +43,10 @@ app.use(session({secret: 'ssshhhhh',saveUninitialized: true,resave: true}));
 
 app.use('/', routes);
 app.use('/admin', admin);
+app.use('/admin/post', adminPost);
+app.use('/admin/page', adminPage);
+app.use('/admin/menu', adminMenu);
+app.use('/admin/user', adminUser);
 
 
 

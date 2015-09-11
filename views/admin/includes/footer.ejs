@@ -6,6 +6,7 @@
 <!-- JavaScript -->
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
 <% if (typeof data != "undefined" && data.hasOwnProperty("js_full_foot")) { %>
 <% for (var i = 0; i < data.js_full_foot.length; i++) {  %>
 <script type="text/javascript" src="<%-  data.js_full_foot[i] %>"></script><% }  %><% } %>

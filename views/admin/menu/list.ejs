@@ -1,0 +1,38 @@
+<% include ../includes/header %>
+
+
+<div class="row">
+    <div class="col-md-4">
+      <% include ../includes/side %>
+    </div>
+  <div class="col-md-8">
+     
+     
+     
+<form method="post" action="/admin/menu/add">
+
+
+<input type="input" name="name" class="form-control"  placeholder="Menu name">
+<button type="submit" class="btn btn-primary">Add new menu</button>  
+</form>
+
+
+
+
+<hr>     
+     
+<% menuItems.forEach(function(menu, index) { %>
+<p>
+<%- menu.name -%> | <a href="/admin/menu/edit/<%- menu._id -%>">edit</a> | <a href="/admin/menu/delete/<%- menu._id -%>">delete</a>
+</p>
+
+<% })  %>
+     
+     
+     
+     
+     
+  </div>
+</div>
+
+<% include ../includes/footer %>

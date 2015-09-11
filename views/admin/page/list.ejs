@@ -13,9 +13,9 @@
  <a href="/admin/page/add" class="btn btn-success">Add new</a>
 <hr>     
      
-<% posts.forEach(function(post, index) { %>
+<% pages.forEach(function(page, index) { %>
 <p>
-<%- post.title -%> | <a href="/admin/post?action=edit&id=<%- post._id -%>">edit</a> | <a href="/admin/post?action=delete&id=<%- post._id -%>">delete</a>
+<%- page.title -%> | <a href="/admin/page/edit/<%- page._id -%>">edit</a> | <a href="/admin/page/delete/<%- page._id -%>">delete</a>
 </p>
 
 <% })  %>
